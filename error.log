@@ -1,0 +1,18 @@
+{"message":"error error error","level":"error","timestamp":"2018-11-13T07:25:57.762Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T07:26:52.072Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T07:36:02.663Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T07:39:46.294Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T07:41:20.462Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:10:57.664Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:11:18.933Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:11:31.800Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:11:49.587Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:11:53.350Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:12:06.169Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:12:45.130Z"}
+{"errno":"EADDRINUSE","code":"EADDRINUSE","syscall":"listen","address":"::","port":3000,"level":"error","timestamp":"2018-11-14T08:51:00.226Z"}
+{"errno":"EADDRINUSE","code":"EADDRINUSE","syscall":"listen","address":"::","port":3000,"level":"error","timestamp":"2018-11-14T08:51:27.632Z"}
+{"errno":"EADDRINUSE","code":"EADDRINUSE","syscall":"listen","address":"::","port":3000,"level":"error","timestamp":"2018-11-14T08:53:56.568Z"}
+{"message":"{\"errno\":\"EADDRINUSE\",\"code\":\"EADDRINUSE\",\"syscall\":\"listen\",\"address\":\"::\",\"port\":3000}","level":"error","timestamp":"2018-11-14T08:54:14.660Z"}
+{"message":"Port 3000 is already in use","level":"error","timestamp":"2018-11-14T08:55:45.560Z"}
+{"message":"Port 3000 is already in use","level":"error","timestamp":"2018-11-14T08:56:33.782Z"}

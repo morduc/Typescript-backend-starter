@@ -1,0 +1,66 @@
+{"message":"Test log","level":"info","timestamp":"2018-11-13T07:25:57.762Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T07:25:57.762Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T07:25:57.762Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T07:26:52.071Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T07:26:52.072Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T07:26:52.072Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T07:36:02.662Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T07:36:02.662Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T07:36:02.663Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T07:39:46.293Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T07:39:46.294Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T07:39:46.294Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T07:41:20.462Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T07:41:20.462Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T07:41:20.462Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T12:10:57.663Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T12:10:57.664Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:10:57.664Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T12:11:18.932Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T12:11:18.933Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:11:18.933Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T12:11:31.799Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T12:11:31.800Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:11:31.800Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T12:11:49.586Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T12:11:49.586Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:11:49.587Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T12:11:53.349Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T12:11:53.349Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:11:53.350Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T12:12:06.169Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T12:12:06.169Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:12:06.169Z"}
+{"message":"Test log","level":"info","timestamp":"2018-11-13T12:12:45.130Z"}
+{"message":"some warning","level":"warn","timestamp":"2018-11-13T12:12:45.130Z"}
+{"message":"error error error","level":"error","timestamp":"2018-11-13T12:12:45.130Z"}
+{"level":"info","message":"Server running on: https://localhost:%d","timestamp":"2018-11-14T08:38:49.601Z"}
+{"level":"info","message":"Server running on: https://localhost:%d","timestamp":"2018-11-14T08:39:48.050Z"}
+{"level":"info","message":"Server running on: https://localhost:%d","timestamp":"2018-11-14T08:40:39.366Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:41:09.633Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:42:46.896Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:45:56.782Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:46:07.107Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:50:50.399Z"}
+{"errno":"EADDRINUSE","code":"EADDRINUSE","syscall":"listen","address":"::","port":3000,"level":"error","timestamp":"2018-11-14T08:51:00.227Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:51:15.603Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:51:24.340Z"}
+{"errno":"EADDRINUSE","code":"EADDRINUSE","syscall":"listen","address":"::","port":3000,"level":"error","timestamp":"2018-11-14T08:51:27.632Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:52:49.484Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:53:52.282Z"}
+{"errno":"EADDRINUSE","code":"EADDRINUSE","syscall":"listen","address":"::","port":3000,"level":"error","timestamp":"2018-11-14T08:53:56.569Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:54:11.369Z"}
+{"message":"{\"errno\":\"EADDRINUSE\",\"code\":\"EADDRINUSE\",\"syscall\":\"listen\",\"address\":\"::\",\"port\":3000}","level":"error","timestamp":"2018-11-14T08:54:14.660Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:55:41.991Z"}
+{"message":"Port 3000 is already in use","level":"error","timestamp":"2018-11-14T08:55:45.561Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:56:30.176Z"}
+{"message":"Port 3000 is already in use","level":"error","timestamp":"2018-11-14T08:56:33.783Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:56:54.849Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:58:07.122Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:59:19.975Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T08:59:45.872Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T09:06:53.539Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T09:07:37.131Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T09:12:01.993Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T09:12:07.847Z"}
+{"message":"Server running on port: 3000","level":"info","timestamp":"2018-11-14T09:12:10.993Z"}
