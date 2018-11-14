@@ -11,13 +11,12 @@ import { myContainer } from './dependency-injection/inversify.config';
 
 // import { apiRouter } from './www/router/apiRouter';
 
-// import { getLogger } from 'log4js'
 import { logger } from "./utils/logger";
 
 export class Server {
 
-  app: Application;
-  port: string | number;
+  private app: Application;
+  private port: string | number;
 
   public start() {
     this.app = express();
