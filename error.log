@@ -16,3 +16,89 @@
 {"message":"{\"errno\":\"EADDRINUSE\",\"code\":\"EADDRINUSE\",\"syscall\":\"listen\",\"address\":\"::\",\"port\":3000}","level":"error","timestamp":"2018-11-14T08:54:14.660Z"}
 {"message":"Port 3000 is already in use","level":"error","timestamp":"2018-11-14T08:55:45.560Z"}
 {"message":"Port 3000 is already in use","level":"error","timestamp":"2018-11-14T08:56:33.782Z"}
+{"message":"Failed to prepare CA. Error: Error creating state_member_db database to store membership data: Error: connect ENETUNREACH 10.2.25.210:443\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1191:14)","level":"error","timestamp":"2018-12-21T06:23:58.420Z"}
+{"level":"error","timestamp":"2018-12-21T12:02:34.840Z"}
+{"level":"error","timestamp":"2018-12-21T12:02:34.840Z"}
+{"level":"error","timestamp":"2018-12-21T12:06:58.696Z"}
+{"level":"error","timestamp":"2018-12-21T12:06:58.696Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-28T10:51:32.524Z"}
+{"name":"JsonWebTokenError","message":"jwt malformed","level":"error","timestamp":"2018-12-28T11:09:30.493Z"}
+{"level":"error","timestamp":"2018-12-28T15:27:06.410Z"}
+{"level":"error","timestamp":"2018-12-28T15:27:06.411Z"}
+{"level":"error","timestamp":"2018-12-28T15:27:41.328Z"}
+{"level":"error","timestamp":"2018-12-28T16:13:59.673Z"}
+{"level":"error","timestamp":"2018-12-28T16:13:59.673Z"}
+{"level":"error","timestamp":"2018-12-28T16:19:37.410Z"}
+{"level":"error","timestamp":"2018-12-28T16:19:37.410Z"}
+{"level":"error","timestamp":"2018-12-28T16:26:32.815Z"}
+{"level":"error","timestamp":"2018-12-28T16:26:32.816Z"}
+{"level":"error","timestamp":"2018-12-28T17:15:48.495Z"}
+{"message":"OrganisationController getOrganisations","level":"error","timestamp":"2018-12-28T17:17:22.566Z"}
+{"level":"error","timestamp":"2018-12-28T17:17:22.567Z"}
+{"message":"OrganisationController getOrganisations","level":"error","timestamp":"2018-12-28T17:18:09.306Z"}
+{"level":"error","timestamp":"2018-12-28T17:18:09.307Z"}
+{"level":"error","timestamp":"2018-12-28T17:20:13.909Z"}
+{"message":"OrganisationController getOrganisations","level":"error","timestamp":"2018-12-28T17:20:13.909Z"}
+{"level":"error","timestamp":"2018-12-28T17:20:13.910Z"}
+{"message":"OrganisationController getOrganisations","level":"error","timestamp":"2018-12-29T08:24:00.837Z"}
+{"level":"error","timestamp":"2018-12-29T08:24:00.838Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:03:59.172Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:03:59.176Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:05:34.889Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:05:34.895Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:10:07.797Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:10:07.828Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:10:45.422Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:10:45.425Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:11:59.968Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:11:59.971Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:12:21.705Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:12:21.707Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:13:08.979Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:13:09.045Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:14:50.829Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:14:50.857Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:16:59.819Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:16:59.822Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:19:47.754Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:19:47.756Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:20:22.955Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:20:22.956Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:22:09.398Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:22:09.399Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:23:05.228Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:23:05.231Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:23:46.021Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:23:46.022Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:24:15.658Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:24:15.660Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:25:23.717Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:25:23.719Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:25:48.035Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:25:48.037Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:29:59.023Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:29:59.025Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:31:28.034Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:31:28.035Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:31:57.875Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:31:57.877Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:33:18.118Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:33:18.121Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:33:33.802Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:33:33.803Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:33:42.262Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:33:42.263Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:34:05.960Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:34:05.964Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:35:42.697Z"}
+{"name":"JsonWebTokenError","message":"jwt must be provided","level":"error","timestamp":"2018-12-30T20:35:42.699Z"}
+{"level":"error","timestamp":"2018-12-30T22:37:49.936Z"}
+{"level":"error","timestamp":"2018-12-30T22:37:58.748Z"}
+{"level":"error","timestamp":"2018-12-30T22:39:19.058Z"}
+{"level":"error","timestamp":"2018-12-30T22:42:45.715Z"}
+{"level":"error","timestamp":"2018-12-30T22:43:00.173Z"}
+{"level":"error","timestamp":"2018-12-30T22:45:51.514Z"}
+{"level":"error","timestamp":"2018-12-30T22:46:05.550Z"}
+{"level":"error","timestamp":"2018-12-30T22:47:01.574Z"}
+{"level":"error","timestamp":"2018-12-30T22:47:32.241Z"}
+{"level":"error","timestamp":"2018-12-30T22:47:50.430Z"}
