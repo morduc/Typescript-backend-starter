@@ -1,0 +1,2 @@
+{"message":"Failed to prepare CA. Error: Error creating state_member_db database to store membership data: Error: getaddrinfo ENOTFOUND undefined undefined:443\n    at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:67:26)","level":"error","timestamp":"2018-12-20T07:44:51.829Z"}
+{"message":"Failed to prepare CA. Error: Error creating state_member_db database to store membership data: Error: connect ENETUNREACH 10.2.25.210:443\n    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1191:14)","level":"error","timestamp":"2018-12-20T20:32:27.013Z"}

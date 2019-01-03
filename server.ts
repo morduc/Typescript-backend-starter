@@ -4,14 +4,11 @@ import http from "http";
 import express from "express";
 import { Application } from "express";
 
-import { TYPES } from './dependency-injection/types';
-import { IRegistrableController } from './controllers'
-import { myContainer } from './dependency-injection/inversify.config';
-// import { ServerConfiguration } from './www/config/serverConfiguration';
-
+import { ServerConfiguration } from './src/config/ServerConfiguration';
+import { apiRouter } from './src/routes';
 // import { apiRouter } from './www/router/apiRouter';
 
-import { logger } from "./utils/logger";
+import { logger } from "./src/utils/logger";
 
 export class Server {
 
@@ -21,12 +18,14 @@ export class Server {
   public start() {
     this.app = express();
     const server: any = http.createServer(this.app);
-    this.registerRoutes();
 
+    ServerConfiguration.config(this.app);
     // Determine port to expose
     this.port = process.env.PORT || process.env.VCAP_APP_PORT || 3000;
     logger.debug(`port for server: ${this.port}`);
     
+    this.app.use("/api/v1", apiRouter);
+
     // Start server
 
       server.listen(this.port, () => {
@@ -39,23 +38,13 @@ export class Server {
           logger.error(`An unknown error occured on server.listen() call`);
         }
       });
+
+      
   }
-
-  // Getting all controllers, and registering them with their routes
-  private registerRoutes(){
-    myContainer.getAll<IRegistrableController>(TYPES.Controller).forEach(controller => {
-      controller.register(this.app);
-    });
-  }
-
-//     // Configure express
-//     ServerConfiguration.config(app);
-
-
-
-//     ServerConfiguration.setupErrorHandling(app);
-
+  
 }
+
+
 
 
 // Run it
