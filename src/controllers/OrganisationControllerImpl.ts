@@ -79,7 +79,7 @@ export class OrganisationControllerImpl implements IOrganisationController {
             // if(!this.validator.isValidWithDoctype(searchModel, DocTypeEnum.BATCH)){
             //     return res.send({ status: "error", msg: "Invalid selector provided docType batch required"});
             // }
-
+            console.log(JSON.stringify(searchModel));
             let orgs = [];
             // if(this.validator.isMetaCorrect(searchModel))
             //     batches = await this.interactor.getAllBatchesPagination(req.user, searchModel);

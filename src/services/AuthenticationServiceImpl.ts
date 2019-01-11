@@ -57,7 +57,8 @@ export class AuthenticationServiceImpl implements IAuthenticationService {
                 id: user.id,
                 username: user.username,
                 organisation: user.organisation,
-                affiliation: user.affiliation
+                affiliation: user.affiliation,
+                appType: user.appType
             };
 
             res.token = this.issueJwtToken({ user: embeddedProfile });
@@ -79,7 +80,6 @@ export class AuthenticationServiceImpl implements IAuthenticationService {
         try {
             let salt = this.generateSalt(40);
             let hash = this.sha512Hash(req.password as string, salt);
-
             const newUserCAReq: IRegisterRequest = {
                 enrollmentID: uuid.v4(),
                 enrollmentSecret: req.password,

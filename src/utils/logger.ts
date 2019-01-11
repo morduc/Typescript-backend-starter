@@ -30,14 +30,24 @@ const consoleLogOptions = {
   )
 }
 const colorizer = winston.format.colorize();
-  let options: winston.LoggerOptions = {
-      level: 'silly',
 
-      transports: [
-        new winston.transports.File(errorLogFileOpstions),
-        new winston.transports.File(combinedLogFileOptions),
-        new winston.transports.Console(consoleLogOptions),
-      ]
-  }
+let devOptions: winston.LoggerOptions = {
+    level: 'silly',
 
-  export const logger = winston.createLogger(options);
+    transports: [
+    new winston.transports.Console(consoleLogOptions),
+    ]
+}
+
+let prodOptions: winston.LoggerOptions = {
+    level: 'info',
+
+    transports: [
+    new winston.transports.File(errorLogFileOpstions),
+    new winston.transports.File(combinedLogFileOptions),
+    new winston.transports.Console(consoleLogOptions),
+    ]
+}
+
+
+  export const logger = winston.createLogger(devOptions);

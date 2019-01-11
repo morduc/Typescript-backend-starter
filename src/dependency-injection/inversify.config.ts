@@ -11,6 +11,12 @@ import { AuthenticationServiceImpl } from "../services/AuthenticationServiceImpl
 import { IOrganisationService } from "../services/interfaces/IOrganisationService";
 import { OrganisationsServiceImpl } from "../services/OrganisationsServiceImpl";
 
+import { ICaseService } from "../services/interfaces/ICaseService";
+import { CaseServiceImpl } from "../services/CaseServiceImpl";
+
+import { IFoodItemService } from '../services/interfaces/IFoodItemService';
+import { FoodItemServiceImpl } from '../services/FoodItemServiceImpl';
+
 // Controllers
 import { ITestController } from "../controllers/interfaces/ITestController";
 import { TestController } from '../controllers'
@@ -20,6 +26,9 @@ import { AuthenticationControllerImpl } from "../controllers/AuthenticationContr
 
 import { IOrganisationController } from "../controllers/interfaces/IOrganisationsController";
 import { OrganisationControllerImpl } from "../controllers/OrganisationControllerImpl";
+
+import { ICaseController } from "../controllers/interfaces/ICaseController";
+import { CaseControllerImpl } from "../controllers/CaseControllerImpl";
 
 // ---
 import { IUserStore } from "../services/db/interfaces/IUserStore";
@@ -32,17 +41,18 @@ import { IRegistrationClient } from "../services/blockchain/interfaces/iRegistra
 import { RegistrationClient } from "../services/blockchain/registrationClient";
 
 
-
-
 const myContainer = new Container();
 
 // Services
 myContainer.bind<IAuthenticationService>(TYPES.AuthenticationService).to(AuthenticationServiceImpl);
 myContainer.bind<IOrganisationService>(TYPES.OrganisationService).to(OrganisationsServiceImpl)
+myContainer.bind<ICaseService>(TYPES.CaseService).to(CaseServiceImpl)
+myContainer.bind<IFoodItemService>(TYPES.FoodItemService).to(FoodItemServiceImpl);
 // Controllers
 myContainer.bind<IAuthenticationController>(TYPES.AuthenticationController).to(AuthenticationControllerImpl)
 myContainer.bind<ITestController>(TYPES.TestController).to(TestController);
 myContainer.bind<IOrganisationController>(TYPES.OrganisationController).to(OrganisationControllerImpl)
+myContainer.bind<ICaseController>(TYPES.CaseController).to(CaseControllerImpl);
 // Stores
 let couchDBStore = new CouchDBStore(Config.currentOrg.userStore);
 myContainer.bind<ICouchDBStore>(TYPES.CouchDBStore).toConstantValue(couchDBStore);

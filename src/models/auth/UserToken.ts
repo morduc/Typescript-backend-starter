@@ -5,4 +5,5 @@ export interface UserToken {
   username: string,
   organisation?: Organisation
   affiliation?: Affiliation
+  appType: String
 }
