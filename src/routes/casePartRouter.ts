@@ -12,5 +12,5 @@ const controller: ICaseController = myContainer.get<ICaseController>(TYPES.CaseC
 router.put('/', async (req, res, next) => controller.putUpdateCasePart(req, res, next))
 
 // Get CasePart History
-router.get('/:id/history', async (req, res, next) => controller.getHistoryForCase(req, res, next))
+router.get('/:id/history', async (req, res, next) => controller.getHistoryForCasePart(req, res, next))
 export const casePartRouter: Router = router;

@@ -10,6 +10,7 @@ export interface ICaseController {
     putUpdateCase(req: any,res: Response, next: NextFunction):void;
 
     getHistoryForCase(req:any, res:Response, next: NextFunction):void;
+    getHistoryForCasePart(req: any, res: Response, next: NextFunction):void
 
     putUpdateCasePart(req: any, res: Response, next: NextFunction): void;
 }

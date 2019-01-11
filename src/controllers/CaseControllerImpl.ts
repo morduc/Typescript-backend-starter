@@ -55,8 +55,6 @@ export class CaseControllerImpl implements ICaseController {
         
     }
 
-
-
     public async getCase(req: any, res: Response, next: NextFunction) {
         logger.debug("getCase" + req.params.id)
         
@@ -176,64 +174,32 @@ export class CaseControllerImpl implements ICaseController {
             res.json({ status: "error", msg: e.message})
         }
     }
-   
 
-    // public async getCases(req: any,res: Response, next: NextFunction){
-    //     console.log("getCases" + req.body)
-            
-    //     try{
-    //         console.log(req.user);
-    //             // Basic searchmodel
-    //             let searchModel:any= {
-    //                 query: {
-    //                     selector:{
-    //                         docType: "casePart"               
-    //                     }
-    //                 }
-    //             }
-    //             console.log(req.user);
-    //             if(req.user.appType === "member"){
-    //                 console.log("member");
-    //                 searchModel.query.selector.owner = req.user.affiliation.id
-    //             }
-
-    //             let caseParts = await this.caseService.getAllCaseParts(req.user, searchModel);
-    //             let caseIds:string[] = [];
-    //             caseParts.forEach(part => {
-    //                 if(caseIds.indexOf(part.caseId) < 0) caseIds.push(part.caseId);
-    //             })
-
-    //             let caseSM:any= {
-    //                 query: {
-    //                     selector:{
-    //                         docType: "case",
-    //                         id: {
-    //                             $in: caseIds
-    //                         }               
-    //                     }
-    //                 }
-    //             }
-    //             let cases = await this.caseService.getAllCases(req.user, caseSM)
-    //             let caseList = cases.map(aCase => {
-    //                 return {
-    //                     case: aCase,
-    //                     caseParts: caseParts.filter(part => part.caseId === aCase.id)
-    //                 }
-    //             })
-    //             //logger.debug(JSON.stringify(caseParts,null, 2));
-    //             return res.json({
-                    
-    //                 cases: caseList
-    //             });
-
-    //     }
-    //     catch (e) {
-    //         logger.error("getCases")
-    //         logger.error(e);
-    //         res.status(500);
-    //         res.send({ status: "error", msg: e.message });
-    //     }
-    // }
+    public async getHistoryForCasePart(req: any, res: Response, next: NextFunction) {
+        logger.debug("getHistoryForCase" + req.params.id)
+        
+        try {
+            let caseId = req.params.id;
+            let {result} = await this.caseService.getCaseHistory(req.user, caseId);
+            if(result.length <= 0){
+                throw new Error("does not exist");
+            }
+            console.log(JSON.stringify(result));
+         let response = result.map((caseHistory:any) => {
+            return {
+                casePart: caseHistory.value,
+                timestamp: caseHistory.timestamp,
+            }
+        })
+         res.json({
+             casePartHistory: response
+         });
+        } catch(e){
+            logger.error(e);
+            res.status(500);
+            res.json({ status: "error", msg: e.message})
+        }
+    }
 
      public async getCases(req: any,res: Response, next: NextFunction){
         console.log("getCases" + req.body)
