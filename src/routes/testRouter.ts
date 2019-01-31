@@ -2,7 +2,6 @@ import express from "express";
 import { Router } from 'express';
 
 import { myContainer } from '../dependency-injection/inversify.config';
-import { IAuthenticationController } from "../controllers/interfaces/iAuthenticationController";
 import { TYPES } from "../dependency-injection/types";
 import { ITestController } from "../controllers/interfaces/ITestController";
 

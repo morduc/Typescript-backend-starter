@@ -15,7 +15,6 @@ router.use("", authenticationRouter); // Below is secure. Above routers are unse
 router.use("/organisation", organisationRouter);
 router.use("/case", caseRouter);
 router.use("/casepart", casePartRouter);
-//router.use("/lot", lotRouter);
 
 
 

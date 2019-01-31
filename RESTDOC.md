@@ -1,12 +1,5 @@
  ## API Documentation - Endpoints
 
-### Member Token:
-Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiOTE2NjQ1YzktNTJjOC00NmEwLWE4Y2UtMzY1ZTlkM2E2YTNmIiwidXNlcm5hbWUiOiJtZW1iZXIxMCIsIm9yZ2FuaXNhdGlvbiI6eyJpZCI6IjEiLCJuYW1lIjoic2hvcCJ9LCJhZmZpbGlhdGlvbiI6eyJpZCI6IjEiLCJuYW1lIjoic2hvcCJ9LCJhcHBUeXBlIjoibWVtYmVyIn0sImlhdCI6MTU0NzExMDgwMiwiZXhwIjoxNTUzMTU4ODAyfQ.hb_HGwiTnTJYw7pJ_i3ufsAhTuRB2jTE3Mx_2KyBbXw
-
-
-### System admin token
-Basic eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiZWVkNGQwZmMtNjZhMi00OWFmLWEyYjMtYzY2YmFjNGQ2YWQzIiwidXNlcm5hbWUiOiJzeXNhZG1pbiIsIm9yZ2FuaXNhdGlvbiI6eyJpZCI6Ii0xIiwibmFtZSI6Im5vbmUifSwiYWZmaWxpYXRpb24iOnsiaWQiOiItMSIsIm5hbWUiOiJub25lIn0sImFwcFR5cGUiOiJzeXN0ZW1BZG1pbiJ9LCJpYXQiOjE1NDcxMTI5MzAsImV4cCI6MTU1MzE2MDkzMH0.-7THclCGX0GDU-k3dPdeeU1bLeTNpE64Ii_Ft62IMnQ
-
 
 The host name in non production is: ```http://localhost:3000``` and the base url is ```/api/v1``` 
 
@@ -50,8 +43,9 @@ _Example response:_
 ``` javascript
 {
     "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.      eyJ1c2VyIjp7ImlkIjoiMDA5MDNhOTgtZGVkMy00MmMxLWJjZDUtNGIyOWUyNzg4MjFmIiwidXNlcm5hbWUiOiJNb3J0ZW4iLCJvcmdhbmlzYXRpb24iOnsiaWQiOiIxIiwibmFtZSI6ImJsYSJ9LCJhZmZpbGlhdGlvbiI6eyJpZCI6IjEiLCJuYW1lIjoiYmxhYmxhIn19LCJpYXQiOjE1NDU5OTQ2MDEsImV4cCI6MTU1MjA0MjYwMX0.8nu8MtCkQfEMKXpdPCiTpEIG0GZdgoBdHErVHcTHTrw",
-    "username": "Morten",
-    "affiliation": "blabla"
+    "username": "<USERNAME>",
+    "affiliation": "<ORGANISATION NAME>"
+    "appType": "member" or "systemAdmin"
 }
 ```
 
@@ -97,6 +91,69 @@ Be sure to set header _Authorization_ with the value of ```token``` from a login
 
 ### Organisations
 
+* **POST** -> /organisation
+
+_Example request:_
+``` javascript
+{
+	"name": "butik 1"
+}
+```
+
+_Example response:_
+``` javascript
+{
+    "status": "ok",
+    "msg": "Organisation with id 'e4e2c319-74ee-4dd4-bd70-9a9a0181603b' has been created",
+    "organisation": {
+        "name": "butik 1",
+        "id": "e4e2c319-74ee-4dd4-bd70-9a9a0181603b"
+    }
+}
+```
+
+Be sure to set header _Authorization_ with the value of ```token``` from a systemAdmin login response
+
+* **GET** -> /organisation
+
+add ```?ids=["<ID1>", "<ID2>"]``` to the url
+to search for organisations with ids
+
+_Example response:_
+``` javascript
+{
+    "status": "ok",
+    "result": [
+        {
+            "docType": "organisation",
+            "id": "592d5fb0-a449-4bff-9bf6-986deca4ab6b",
+            "name": "org1"
+        },
+        {
+            "docType": "organisation",
+            "id": "e4e2c319-74ee-4dd4-bd70-9a9a0181603b",
+            "name": "butik 1"
+        }
+    ]
+}
+```
+
+Be sure to set header _Authorization_ with the value of ```token``` from a login response
+
+* **GET** -> /organisation/:id
+
+_Example response:_
+``` javascript
+{
+    "status": "ok",
+    "organisation": {
+        "docType": "organisation",
+        "id": "592d5fb0-a449-4bff-9bf6-986deca4ab6b",
+        "name": "org1"
+    }
+}
+```
+
 
 ### Cases
 
@@ -105,29 +162,39 @@ Be sure to set header _Authorization_ with the value of ```token``` from a login
 _Example response:_
 ``` javascript
 {
-    "cases": [
+    "case": {
+        "docType": "case",
+        "foodItem": "ae3e359b-3c86-4acd-b3e4-e29487c129c4",
+        "id": "1dfb9685-58a7-42ed-9e79-698d097a6bef",
+        "state": "open"
+    },
+    "foodItem": {
+        "EANno": "987654321987654321",
+        "docType": "foodItem",
+        "id": "ae3e359b-3c86-4acd-b3e4-e29487c129c4",
+        "name": "fødevare1"
+    },
+    "parts": [
         {
-            "case": {
-                "docType": "case",
-                "foodItem": "ac0c24b7-8ab5-4df4-b979-a143dd292e53",
-                "id": "28f19e08-be73-41f6-ac8e-17fdd7c8e1b7",
-                "state": "open"
-            },
-            "casePart": [
-                {
-                    "caseId": "28f19e08-be73-41f6-ac8e-17fdd7c8e1b7",
-                    "docType": "casePart",
-                    "id": "713fb6da-9935-462f-a418-4f4928eecb6c",
-                    "nextParts": [
-                        "43952372-8c7b-4e56-abab-5b400a8ed9ef"
-                    ],
-                    "owner": "1",
-                    "prevPart": "",
-                    "state": "seen"
-                }
-            ]
+            "caseId": "1dfb9685-58a7-42ed-9e79-698d097a6bef",
+            "docType": "casePart",
+            "id": "75b1b156-3785-4ed9-90aa-dc145fb74541",
+            "nextParts": [
+                "70dda051-6365-453b-b8db-df8a2dc469e2"
+            ],
+            "owner": "592d5fb0-a449-4bff-9bf6-986deca4ab6b",
+            "prevPart": "",
+            "state": "seen"
         },
-        ...
+        {
+            "caseId": "1dfb9685-58a7-42ed-9e79-698d097a6bef",
+            "docType": "casePart",
+            "id": "70dda051-6365-453b-b8db-df8a2dc469e2",
+            "nextParts": [],
+            "owner": "2955c2be-1f6d-49ea-aba9-7e7de1aee468",
+            "prevPart": "75b1b156-3785-4ed9-90aa-dc145fb74541",
+            "state": "new"
+        }
     ]
 }
 ```
@@ -206,43 +273,41 @@ _Example response_
 ```
 Be sure to set header _Authorization_ with the value of ```token``` from a login response from a member
 
-*  **GET** -> /case/<CASE_ID>
+*  **GET** -> /case
+
+returns all cases belonging to the affiliation of the user making the call
 
 _Example response:_
 ``` javascript
 {
-    "case": {
-        "docType": "case",
-        "foodItem": "dc4536f1-ea72-4157-ac1c-2921bde6acf1",
-        "id": "31492e02-fd75-43fa-982d-b464b277a0fc",
-        "state": "open"
-    },
-    "foodItem": {
-        "EANno": "987654321",
-        "docType": "foodItem",
-        "id": "dc4536f1-ea72-4157-ac1c-2921bde6acf1",
-        "name": "test item"
-    },
-    "parts": [
+    "cases": [
         {
-            "caseId": "31492e02-fd75-43fa-982d-b464b277a0fc",
-            "docType": "casePart",
-            "id": "6388a524-5e6a-4128-bf83-fc777799598f",
-            "nextParts": [],
-            "owner": "123kdk29394",
-            "prevPart": "da04f2b5-9ace-425b-b637-44b2cc8fd990",
-            "state": "new"
-        },
-        {
-            "caseId": "31492e02-fd75-43fa-982d-b464b277a0fc",
-            "docType": "casePart",
-            "id": "da04f2b5-9ace-425b-b637-44b2cc8fd990",
-            "nextParts": [
-                "6388a524-5e6a-4128-bf83-fc777799598f"
-            ],
-            "owner": "1",
-            "prevPart": "",
-            "state": "seen"
+            "case": {
+                "docType": "case",
+                "foodItem": "ae3e359b-3c86-4acd-b3e4-e29487c129c4",
+                "id": "1dfb9685-58a7-42ed-9e79-698d097a6bef",
+                "state": "open"
+            },
+            "foodItem": {
+                "EANno": "987654321987654321",
+                "docType": "foodItem",
+                "id": "ae3e359b-3c86-4acd-b3e4-e29487c129c4",
+                "name": "fødevare1"
+            },
+            "caseParts": [
+                {
+                    "caseId": "1dfb9685-58a7-42ed-9e79-698d097a6bef",
+                    "docType": "casePart",
+                    "id": "75b1b156-3785-4ed9-90aa-dc145fb74541",
+                    "nextParts": [
+                        "70dda051-6365-453b-b8db-df8a2dc469e2"
+                    ],
+                    "owner": "592d5fb0-a449-4bff-9bf6-986deca4ab6b",
+                    "prevPart": "",
+                    "state": "seen"
+                },
+                ...
+            ]
         }
     ]
 }
@@ -252,3 +317,146 @@ Be sure to set header _Authorization_ with the value of ```token``` from a login
 With member token, you will get the case and parts related to the token member. This is the part related, and the next parts and previous part
 
 With a systemAdmin token, you will get the case and all caseparts for a complete overview
+
+*  **GET** -> /case/:id/history
+
+returns a history of changes to the case object
+
+_Example response:_
+``` javascript
+{
+    "caseHistory": [
+        {
+            "case": {
+                "docType": "case",
+                "id": "1dfb9685-58a7-42ed-9e79-698d097a6bef",
+                "foodItem": "ae3e359b-3c86-4acd-b3e4-e29487c129c4",
+                "state": "open"
+            },
+            "timestamp": "1547302957"
+        },
+        ...
+    ]
+}
+```
+Be sure to set header _Authorization_ with the value of ```token``` from a login response
+
+* **PUT** -> /case
+
+_Example request:_
+``` javascript
+    {  
+    	"foodItem": "dc4536f1-ea72-4157-ac1c-2921bde6acf1",
+        "id": "31492e02-fd75-43fa-982d-b464b277a0fc",
+        "state": "closed"
+    }
+```
+
+_Example response:_
+``` javascript
+{
+    "status": "ok",
+    "msg": "case with id '1dfb9685-58a7-42ed-9e79-698d097a6bef' has been update",
+    "case": {
+        "foodItem": "ae3e359b-3c86-4acd-b3e4-e29487c129c4",
+        "id": "1dfb9685-58a7-42ed-9e79-698d097a6bef",
+        "state": "closed"
+    }
+}
+```
+
+Be sure to set header _Authorization_ with the value of ```token``` from a systemAdmin login response
+
+
+### CaseParts
+
+* **PUT** /casepart
+
+Updates a casepart with new parts and changes to state
+
+_Example request:_
+```javascript
+
+    {
+    	"casePart": {
+            "state": "seen",
+            "prevPart": "",
+            "id": "60befc24-7531-496d-83a7-e7c9800c5609",
+            "caseId": "effb068a-ddd7-49b7-834a-ed10f838be98",
+            "owner": "1",
+            "nextParts": [
+                "3847b76d-17c7-44e0-b307-8fd9e4898ad0"
+            ]
+        },
+        "nextParts": [
+            {
+                "owner": "dkdsdwl",
+                "state": "new",
+                "caseId": "effb068a-ddd7-49b7-834a-ed10f838be98",
+                "nextParts": [],
+                "prevPart": "60befc24-7531-496d-83a7-e7c9800c5609"
+            }
+        ]
+    }
+```
+
+_Example response:_
+```javascript
+{
+    "status": "ok",
+    "msg": "casepart with id 'undefined' has been updated",
+    "case": {
+        "casePart": {
+            "caseId": "1dfb9685-58a7-42ed-9e79-698d097a6bef",
+            "docType": "casePart",
+            "id": "70dda051-6365-453b-b8db-df8a2dc469e2",
+            "nextParts": [
+                "7416fd6e-7f19-4478-a3d6-60778848826c"
+            ],
+            "owner": "2955c2be-1f6d-49ea-aba9-7e7de1aee468",
+            "prevPart": "75b1b156-3785-4ed9-90aa-dc145fb74541",
+            "state": "closed"
+        },
+        "nextParts": [
+            {
+                "owner": "dkdsdwl",
+                "state": "new",
+                "caseId": "1dfb9685-58a7-42ed-9e79-698d097a6bef",
+                "nextParts": [],
+                "prevPart": "70dda051-6365-453b-b8db-df8a2dc469e2",
+                "id": "7416fd6e-7f19-4478-a3d6-60778848826c"
+            }
+        ]
+    }
+}
+```
+
+Be sure to set header _Authorization_ with the value of ```token``` from a login response
+
+
+* **GET** /casepart/:id/history
+
+shows the history of changes to a casepart
+
+_Example response:_
+```javascript
+{
+    "casePartHistory": [
+        {
+            "casePart": {
+                "docType": "casePart",
+                "id": "70dda051-6365-453b-b8db-df8a2dc469e2",
+                "caseId": "1dfb9685-58a7-42ed-9e79-698d097a6bef",
+                "owner": "2955c2be-1f6d-49ea-aba9-7e7de1aee468",
+                "state": "new",
+                "prevPart": "75b1b156-3785-4ed9-90aa-dc145fb74541",
+                "nextParts": []
+            },
+            "timestamp": "1547302957"
+        },
+        ...
+    ]
+}
+```
+
+Be sure to set header _Authorization_ with the value of ```token``` from a login response

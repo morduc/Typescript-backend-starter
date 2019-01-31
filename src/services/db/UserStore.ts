@@ -5,9 +5,6 @@ import { ICouchDBStore } from "./interfaces/iCouchDBStore";
 import { logger } from '../../utils/logger';
 import { injectable, inject } from "inversify";
 import { TYPES } from "../../dependency-injection/types";
-import { organisationRouter } from "../../routes/organisationRouter";
-import { Store } from "tough-cookie";
-import { userInfo } from "os";
 
 @injectable()
 export class UserStore implements IUserStore {
@@ -36,23 +33,14 @@ export class UserStore implements IUserStore {
 
         let query:any = {
             selector: {
-                data: {appType: "member",
-            }
-                // data: {
-                //     appType: "member",
-
-                // }
+                data: {
+                    appType: "member",
+                }
             },
             fields: ["data.username", "data.affiliation"]
         }
 
-        // if(orgs.length > 0){
-        //     query.selector.data.affiliation = {
-        //         name: {
-        //             $in: orgs
-        //         }
-        //     }
-        // }
+
 
         let result = await this.store.find(query);
         

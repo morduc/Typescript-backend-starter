@@ -7,7 +7,6 @@ import { logger } from '../utils/logger';
 import { ICaseService } from '../services/interfaces/ICaseService';
 import { ICasePart } from '../models/case/ICasePart';
 import { IFoodItemService } from '../services/interfaces/IFoodItemService';
-import { MemberClient } from '../services/blockchain/memberClient';
 
 @injectable()
 export class CaseControllerImpl implements ICaseController {
@@ -121,12 +120,6 @@ export class CaseControllerImpl implements ICaseController {
             }
 
             res.json(response);
-            // if(result && result.organisation) {
-            //     res.json({status: "ok", organisation: result.organisation})
-            // } else {
-            //     res.status(404);
-            //     // res.json({status: "error", msg: `Did not find organisation with id '${orgId}'`});
-            // }
         } catch(e){
             logger.error(e);
             res.status(500);

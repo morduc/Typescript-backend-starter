@@ -5,8 +5,7 @@ import { IOrganisationService } from '../services/interfaces/IOrganisationServic
 import { injectable, inject } from 'inversify';
 import { TYPES } from '../dependency-injection/types';
 import { logger } from '../utils/logger';
-import { OrganisationModel } from '../models/blockchain/organisation/Organisation';
-import { SearchModel } from '../models/search/SearchModel';
+
 @injectable()
 export class OrganisationControllerImpl implements IOrganisationController {
     private CTRL_TYPE:string = "OrganisationController"

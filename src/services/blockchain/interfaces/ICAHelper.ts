@@ -1,6 +1,6 @@
 import FabricClient, { User } from "fabric-client";
 
-import CAClient, { IEnrollmentRequest, IRevokeRequest, IRegisterRequest } from "fabric-ca-client"
+import { IEnrollmentRequest, IRevokeRequest, IRegisterRequest } from "fabric-ca-client"
 
 export interface ICAHelper {
 

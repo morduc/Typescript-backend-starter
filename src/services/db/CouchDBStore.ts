@@ -4,9 +4,7 @@ import { ICouchDBStore } from "./interfaces/iCouchDBStore";
 import { StoreConfig } from "../../models/db/storeConfig";
 
 import { logger } from "../../utils/logger";
-import { injectable, inject } from 'inversify';
-import { TYPES } from '../../dependency-injection/types';
-import { rejects } from 'assert';
+import { injectable } from 'inversify';
 
 @injectable()
 export default class CouchDBStore implements ICouchDBStore {

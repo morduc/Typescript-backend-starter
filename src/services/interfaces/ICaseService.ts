@@ -7,8 +7,6 @@ import { IUpdateCasePart } from '../../models/Case/IUpdateCasePart';
 import { ICase } from "../../models/case/ICase";
 export interface ICaseService {
 
-    //getAllBatchesPagination(user: UserTokenModel, search: SearchModel): Promise<any>;
-
     getAllCases(user: UserToken, search: SearchModel): Promise<ICase[]>;
 
     getAllCaseParts(user: UserToken, search: SearchModel): Promise<ICasePart[]>;

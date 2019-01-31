@@ -35,7 +35,7 @@ export class Server {
         if(e.errno = "EADDRINUSE"){
           logger.error(`Port ${this.port} is already in use`);
         } else {
-          logger.error(`An unknown error occured on server.listen() call`);
+          logger.error(`An unknown error occured on listen`);
         }
       });
 

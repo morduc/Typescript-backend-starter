@@ -228,21 +228,6 @@ export class BaseBCClient extends EventEmitter implements IBaseBCClient {
 
             eventHub.connect(true);
 
-            // TODO: 1.2.0
-            /*this._organisation.peers.forEach((peer: any) => {
-                const eventHub = this._client.newEventHub();
-                const peerOptions: object = {
-                    pem: peer.publicKey,
-                    'ssl-target-name-override': peer.host
-                };
-                eventHub.setPeerAddr(peer.eventHub, peerOptions);
-                eventHub.connect();
-                eventHub.registerBlockEvent((block: any) => {
-                    this.emit('block', Utils.unmarshalBlock(block));
-                });
-                this._eventHubs.push(eventHub);
-            });*/
-
         } catch (e) {
             logger.error(`Failed to configure event hubs. Error ${e.message}`);
             throw e;
@@ -312,10 +297,6 @@ export class BaseBCClient extends EventEmitter implements IBaseBCClient {
             const peer = new Peer(p.url, peerOptions);
             this._peers.push(peer);
 
-            // TODO: 1.2.0
-            //this._channel.addPeer(peer)
-
-            //TODO: 1.3.0
             this._channel.addPeer(peer, this._organisation.ca.mspId);
         }
     }

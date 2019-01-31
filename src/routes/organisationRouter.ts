@@ -4,7 +4,6 @@ import { Router } from 'express';
 import { myContainer } from '../dependency-injection/inversify.config';
 import { IOrganisationController } from "../controllers/interfaces/IOrganisationsController";
 import { TYPES } from "../dependency-injection/types";
-import { OrganisationControllerImpl } from "../controllers/OrganisationControllerImpl";
 
 const router:Router = express.Router();
 const controller: IOrganisationController = myContainer.get<IOrganisationController>(TYPES.OrganisationController);

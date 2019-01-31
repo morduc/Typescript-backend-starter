@@ -9,8 +9,6 @@ import { IEnrollmentRequest, IRegisterRequest, IRevokeRequest } from "fabric-ca-
 import { IRegistrationClient } from "./interfaces/iRegistrationClient";
 
 import { logger } from '../../utils/logger'
-import { TYPES } from "../../dependency-injection/types";
-import { Config } from "../../config/Config";
 @injectable()
 export class RegistrationClient implements IRegistrationClient {
 
