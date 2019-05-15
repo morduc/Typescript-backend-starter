@@ -3,11 +3,10 @@ import { Application } from 'express';
 import bodyParser from 'body-parser';
 import helmet from 'helmet';
 import compress from 'compression';
-
+import {Config} from './Config';
 export class ServerConfiguration {
 
   static config(server: Application) {
-
     // Parse body params and attache them to req.body
     server.use(bodyParser.json());
     server.use(bodyParser.urlencoded({ extended: true }));
@@ -20,39 +19,42 @@ export class ServerConfiguration {
 
     server.enable('trust proxy');
 
+
+    // check that we use https
     if (server.get('env') !== 'development') {
         server.use(function (req, res, next) {
-            if (req.secure || process.env.BLUEMIX_REGION === null) {
-            next()
+            if (req.secure) {
+              next();
             } else {
-            res.redirect('https://' + req.headers.host + req.url)
+              res.redirect('https://' + req.headers.host + req.url);
             }
         });
     }
 
-    server.options("*", function (req, res, next) {
+
+    server.use("*", function (req, res, next) {
+      //  Set cors
+      if(Config.conf.serverConfig.allowedOrigins.length === 1 && Config.conf.serverConfig.allowedOrigins[0] === '*' ){
         res.setHeader('Access-Control-Allow-Origin', '*');
-        res.header('Access-Control-Allow-Headers', 'X-Requested-With,Content-Length,content-type,Authorization');
-        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT, OPTIONS');
-        res.sendStatus(200);
+      }else {
+        var origin = req.headers.origin;
+        if(Config.conf.serverConfig.allowedOrigins.indexOf(origin) > -1){
+          res.setHeader('Access-Control-Allow-Origin', origin);
+        }
+      }
+      // Request methods you wish to allow
+      res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT, OPTIONS');
+
+      // Request headers you wish to allow
+      res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Length,content-type,Authorization');
+
+      if(req.method === 'OPTIONS'){
+        res.status(200).end();
+      }else {
+        // Pass to next layer of middleware
+        next();
+      }
     });
-
-    if (server.get('env') === 'development') {
-        server.use("*", function (req, res, next) {
-            // Website you wish to allow to connect
-            res.setHeader('Access-Control-Allow-Origin', '*'); //
-
-            // Request methods you wish to allow
-            res.setHeader('Access-Control-Allow-Methods', 'GET, POST, DELETE, PUT, OPTIONS');
-
-            // Request headers you wish to allow
-            res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,Content-Length,content-type,Authorization');
-
-            // Pass to next layer of middleware
-            next();
-      });
-    }
-
   }
 
   static setupErrorHandling(server: Application) {
@@ -68,7 +70,6 @@ export class ServerConfiguration {
     server.use(function (err: any, req: Request, res: Response, next: NextFunction) {
         res.locals.message = err.message;
         res.locals.error = req.app.get('env') === 'development' ? err : {};
-
         res.status(err.status || 500);
         res.send(res.locals)
     });
